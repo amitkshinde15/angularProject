@@ -13,8 +13,8 @@ firstName :string = 'Rocky';
   ngOnInit() {
   }
   onButtonClick(){
-    this.count++
-    console.log('count');
+    let counts = this.count+1
+    console.log(`counts`);
     
   }
   onKeyUp(key) {
