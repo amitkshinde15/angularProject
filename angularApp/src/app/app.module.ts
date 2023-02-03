@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Test2Component } from './test2/test2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
