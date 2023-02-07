@@ -11,6 +11,18 @@ export class AppComponent {
   name = 'Amit';
   empCount;
   date;
+  parentToChild: string = "I am coming from parent ";
+
+  posts = [
+    {
+      title: 'Pam Tree',
+      content: 'I love this tree'
+    },
+    {
+      title: 'Mango Tree',
+      content: 'I love this tree'
+    }
+  ]	
   
   data = {
     name : 'Codeminde',
@@ -26,7 +38,7 @@ export class AppComponent {
     
     
   }
-  imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
+  //imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
   getCurrentDate(){
     this.date = Date();
   }

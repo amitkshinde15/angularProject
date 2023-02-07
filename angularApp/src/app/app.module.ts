@@ -7,13 +7,15 @@ import { DemoComponent } from './demo/demo.component';
 import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     Test1Component,
-    Test2Component
+    Test2Component,
+    CardComponent
   ],
   imports: [
     BrowserModule,
