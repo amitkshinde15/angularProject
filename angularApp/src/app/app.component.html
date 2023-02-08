@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1 class="bgc">
     Welcome to {{ title }}! {{name}}
   </h1>
@@ -13,11 +13,14 @@
 {{data.name}} 
 {{data.dept}}
 <div [innerHTML] = 'test'></div>
-<img [src]="imageUrl" alt="">
+<img [src]="imageUrl" alt=""> -->
 
-<app-test2 [child]="parentToChild"></app-test2>
-<app-card [title]="posts[0].title" [content]="posts[0].content"></app-card> 
-<app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>
+<!-- <app-test2 [child]="parentToChild"></app-test2> -->
+<!-- <app-card [title]="posts[0].title" [content]="posts[0].content"></app-card> 
+<app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>   -->
 
+<app-output-decorator (fromChild)="onParent($event)">
+   
+</app-output-decorator>
 
 <router-outlet></router-outlet>

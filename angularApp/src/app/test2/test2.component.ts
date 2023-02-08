@@ -9,7 +9,7 @@ export class Test2Component implements OnInit {
 count : number = 0;
 firstName :string = 'Rocky';
 userName : string = '';
-@Input() child : string; // []
+@Input() child : string; // [child]
   constructor() { }
 
   ngOnInit() {

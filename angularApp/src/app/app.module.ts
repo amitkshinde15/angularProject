@@ -8,6 +8,7 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test2/test2.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CardComponent } from './card/card.component';
     DemoComponent,
     Test1Component,
     Test2Component,
-    CardComponent
+    CardComponent,
+    OutputDecoratorComponent
   ],
   imports: [
     BrowserModule,

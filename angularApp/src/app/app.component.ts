@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,17 @@ export class AppComponent {
   getCurrentDate(){
     this.date = Date();
   }
-
+ 
+  onParent(val) {
+    for (const key in val) {
+      if (Object.prototype.hasOwnProperty.call(val, key)) {
+        const element = val[key];
+        console.log(`${key} => ${element}`);
+      }
+    }
+    
+    
+    
+  }
 }
 

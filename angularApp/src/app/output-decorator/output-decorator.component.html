@@ -1,0 +1,9 @@
+<button class="btn btn-primary" (click)="sendToParent()">Show Emp Details</button>
+<br><br>
+<div [hidden]="!showDetails">
+<h5 (display)="sendToParent()">Employee Id : <span class="color">{{empDetails.empId}}</span></h5>
+<h5 (display)="sendToParent()">Employee First Name : <span class="color">{{empDetails.firstName}}</span></h5>
+<h5 (display)="sendToParent()">Employee Last Name : <span class="color">{{empDetails.lastName}}</span></h5>
+<h5 (display)="sendToParent()">Employee City : <span class="color">{{empDetails.city}}</span></h5>
+
+</div>
