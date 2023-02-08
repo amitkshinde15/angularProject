@@ -29,11 +29,7 @@ export class OutputDecoratorComponent implements OnInit {
   sendToParent() {
     //this.fromChild.emit(this.lastname);
     this.showDetails=!this.showDetails;
-    this.fromChild.emit(this.empDetails)
-    // this.fromChild.emit(this.empDetails.empId)
-    // this.fromChild.emit(this.empDetails.firstName)
-    // this.fromChild.emit(this.empDetails.lastName)
-    // this.fromChild.emit(this.empDetails.city)
+    this.fromChild.emit(this.empDetails);
   }
 
 }
