@@ -9,6 +9,8 @@ import { Test2Component } from './test2/test2.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
+import { NgforComponent } from './ngfor/ngfor.component';
+import { NgforDropdownComponent } from './ngfor-dropdown/ngfor-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { OutputDecoratorComponent } from './output-decorator/output-decorator.co
     Test1Component,
     Test2Component,
     CardComponent,
-    OutputDecoratorComponent
+    OutputDecoratorComponent,
+    NgforComponent,
+    NgforDropdownComponent
   ],
   imports: [
     BrowserModule,

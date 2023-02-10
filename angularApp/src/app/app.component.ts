@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { element } from 'protractor';
+import { Employee } from './model/employee';
 
 @Component({
   selector: 'app-root',
@@ -44,13 +45,9 @@ export class AppComponent {
     this.date = Date();
   }
  
-  onParent(val) {
-    for (const key in val) {
-      if (Object.prototype.hasOwnProperty.call(val, key)) {
-        const element = val[key];
-        console.log(`${key} => ${element}`);
-      }
-    }
+  onParent(val : Employee) {
+      console.log('Employee details', val);
+      
     
     
     
