@@ -11,6 +11,13 @@ import { CardComponent } from './card/card.component';
 import { OutputDecoratorComponent } from './output-decorator/output-decorator.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { NgforDropdownComponent } from './ngfor-dropdown/ngfor-dropdown.component';
+import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { NgifComponent } from './ngif/ngif.component';
+import { Ngswitch2Component } from './ngswitch2/ngswitch2.component';
+import { NgstyleComponent } from './ngstyle/ngstyle.component';
+import { NgclassComponent } from './ngclass/ngclass.component';
+import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +28,14 @@ import { NgforDropdownComponent } from './ngfor-dropdown/ngfor-dropdown.componen
     CardComponent,
     OutputDecoratorComponent,
     NgforComponent,
-    NgforDropdownComponent
+    NgforDropdownComponent,
+    NgswitchComponent,
+    DropdownComponent,
+    NgifComponent,
+    Ngswitch2Component,
+    NgstyleComponent,
+    NgclassComponent,
+    DirectiveAssignmentComponent
   ],
   imports: [
     BrowserModule,

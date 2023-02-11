@@ -1,0 +1,15 @@
+
+      <label for="">Select Country</label>
+
+      <select (change)="changeCountry($event)">
+        <option value="">Select Country</option>
+        <option value="{{c.id}}" *ngFor="let c of country" >{{ c.name }}</option>
+      </select>
+<br>
+      <label for="">Select State</label>
+      <select >
+        <option value="">Select State</option>
+      
+        <option value="{{s.id}}" *ngFor="let s of stateArray" >{{ s.name }}</option>
+      </select>
+

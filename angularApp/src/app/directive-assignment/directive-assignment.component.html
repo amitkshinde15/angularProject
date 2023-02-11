@@ -1,0 +1,24 @@
+<ul>
+    <li><h4>Assignments - directives</h4></li>
+    
+</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <button class="{{status}}" (click)="onDisplayDetailsClick()" (click)="enableDisableRule()"
+            >Display Details</button>
+        </div>
+        <div class="col-xs-9">
+            <div *ngIf="toggleDetails">'Secret Password = tuna' & you can use it if you love fish.</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div *ngFor="let click of logClicks; let i = index">
+                <div [ngStyle]="{backgroundColor: getBackgroundColor(i)}" [ngClass]="{'white-font': click.count > 4}">
+                    {{click.count}}=> {{click.time}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

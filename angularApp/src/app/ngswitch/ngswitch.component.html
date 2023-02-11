@@ -1,6 +1,7 @@
 <div>
     <div>
-        <div class="card" style="width: 18rem;" *ngFor="let course of courses">
+        <ng-container class="card" style="width: 18rem;" *ngFor="let course of courses">
+          <div *ngIf="course.id">
             <img class="card-img-top" [src]="course.iconURL" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{course.desc}}</h5>
@@ -11,6 +12,7 @@
                     <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
               </div>
             </div>
-          </div>
+            </div>
+          </ng-container>
     </div>
 </div>
