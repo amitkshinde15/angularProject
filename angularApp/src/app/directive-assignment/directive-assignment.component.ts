@@ -9,7 +9,7 @@ export class DirectiveAssignmentComponent implements OnInit {
   toggleDetails = false;
   logClicks = [];
   clickCount = 0;
-
+ 
   toggle = true;
   status = 'btn btn-primary'; 
 
@@ -32,6 +32,6 @@ export class DirectiveAssignmentComponent implements OnInit {
   }
   enableDisableRule() {
     this.toggle = !this.toggle;
-    this.status = this.toggle ? 'btn btn-primary' : 'btn btn-secondary';
+    this.status = this.toggle ? 'btn btn-primary' : 'btn btn-danger';
 }
 }

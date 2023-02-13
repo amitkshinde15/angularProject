@@ -1,3 +1,4 @@
+  
 <ul>
     <li><h4>Assignments - directives</h4></li>
     
@@ -15,10 +16,14 @@
     <div class="row">
         <div class="col-xs-12">
             <div *ngFor="let click of logClicks; let i = index">
-                <div [ngStyle]="{backgroundColor: getBackgroundColor(i)}" [ngClass]="{'white-font': click.count > 4}">
-                    {{click.count}}=> {{click.time}}
+                <div class ="bor" [ngStyle]="{backgroundColor: getBackgroundColor(i)}" [ngClass]="{'white-font': click.count > 4}">
+                    {{click.count}}) {{click.time}}
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+

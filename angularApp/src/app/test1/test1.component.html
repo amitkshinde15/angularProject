@@ -1,6 +1,4 @@
 
-<p>test1 works!</p>
-
-<h1>
-    {{dispayMessage}}
-</h1>
+<input type="text" [(ngModel)]="displayMessage">
+<button (click)="getData()">Click me</button>
+<p *ngIf="click">Hello {{displayMessage}}</p>

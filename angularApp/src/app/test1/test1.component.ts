@@ -6,14 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test1.component.css']
 })
 export class Test1Component implements OnInit {
-displayMessage;
+displayMessage = '';
+click = false;
   constructor() {}
    
   ngOnInit() {
   }
-  display(){
-    this.displayMessage = 'How are you!!!';
+  
+  getData(){
+    this.click=true;
+    console.log('Hi',this.displayMessage);
+    
   }
+  
   
   }
 
