@@ -10,7 +10,7 @@
             <mat-form-field>
                 <input matInput  ngModel name="password" type="password" placeholder="Password">
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="login(loginForm.value)">Login</button>
+            <button mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
         </form>
         <div class="form-val">
             {{ loginForm.value | json}}

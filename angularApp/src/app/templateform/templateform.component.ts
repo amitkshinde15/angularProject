@@ -14,6 +14,6 @@ export class TemplateformComponent implements OnInit {
   }
 
   login(form: NgForm) {
-console.log(form)
+console.log(form.value)
   }
 }
