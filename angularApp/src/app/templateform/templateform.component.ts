@@ -8,12 +8,27 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateformComponent implements OnInit {
 
+  defaultValue = 'Angular';
+  defaultGender = 'Male';
+  courses: string[] = ['Angular', 'Javascript', 'Typescript'];
+  genders = [ 
+    {
+      id: '1', value: 'Male'
+    },
+    {
+      id: '2', value: 'Female'
+    }
+  ]
+  emails='';
   constructor() { }
 
   ngOnInit() {
   }
 
   login(form: NgForm) {
-console.log(form.value)
+console.log(form);
+form.reset();
   }
+
+
 }

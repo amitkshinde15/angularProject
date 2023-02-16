@@ -4,16 +4,48 @@
     </mat-card-title>
     <mat-card-content>
         <form class="login-form" #loginForm="ngForm">
+            <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+
+           
             <mat-form-field>
-                <input matInput  ngModel name="email" type="email" placeholder="Email">
+                
+                <input matInput type="email" name="email"
+                ngModel
+                #email="ngModel"
+                required email 
+                placeholder="Email">
+ 
+               <!-- <small *ngIf="!email.valid && email.touched">This email is mandatory</small> -->
             </mat-form-field>
+            <small *ngIf="!userDetail.valid && userDetail.touched">This email is mandatory</small>
+            <!-- <mat-error *ngIf="userDetail.email.errors?.required">The email is mandatory.</mat-error> -->
             <mat-form-field>
-                <input matInput  ngModel name="password" type="password" placeholder="Password">
+                <input matInput  ngModel  #password="ngModel"  name="password" type="password" placeholder="Password" required >
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
+        </div>
+            <!-- <mat-form-field appearance="fill">
+                <mat-label [ngModel]="defaultValue"></mat-label>
+                <mat-select  >
+                  <mat-option value="Angular">Angular</mat-option>
+                  <mat-option value="Javascript" >Javascript</mat-option>
+                  <mat-option value="Typescript">Typescript</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+
+              <select class="form-control" name="course" [ngModel]="defaultValue" >
+                <option *ngFor="let course of courses"  value="{{course}}">{{course}}</option>
+              </select>
+
+              <div class="form-group" *ngFor="let gender of genders">
+
+                <input type="radio" name="gender" id="gender" value="{{gender.value}}" [ngModel]="defaultGender"
+                class="custom-control custom-radio">
+                <label for="{{gender.id}}">{{gender.value}}</label>
+              </div>
+            <button  mat-raised-button color="primary" (click)="login(loginForm)" >Login</button>
         </form>
         <div class="form-val">
-            {{ loginForm.value | json}}
+            <!-- {{ loginForm.value | json}} -->
         </div>
     </mat-card-content>
 </mat-card>
