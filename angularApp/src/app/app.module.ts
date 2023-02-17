@@ -21,7 +21,6 @@ import { DirectiveAssignmentComponent } from './directive-assignment/directive-a
 import { CustomDirective } from './custom.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { TemplateformComponent } from './templateform/templateform.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button'
@@ -45,6 +44,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
+import { TemplateformComponent } from './templateform/templateform.component';
 
 @NgModule({
   declarations: [

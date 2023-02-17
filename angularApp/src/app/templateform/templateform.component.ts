@@ -8,6 +8,13 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateformComponent implements OnInit {
 
+  isSubmitted: boolean = false;
+  formData  = {
+    email: '',
+    password: '',
+    course: '',
+    gender: ''
+  }
   defaultValue = 'Angular';
   defaultGender = 'Male';
   courses: string[] = ['Angular', 'Javascript', 'Typescript'];
@@ -26,9 +33,21 @@ export class TemplateformComponent implements OnInit {
   }
 
   login(form: NgForm) {
+    this.isSubmitted = true;
 console.log(form);
-form.reset();
+
+ this.formData.email = form.value.email;
+ this.formData.password = form.value.password;
+ this.formData.course = form.value.course;
+ this.formData.gender = form.value.gender;
+//form.reset();
+
+form.controls['course'].setValue('Angular');
+form.controls['gender'].patchValue('Male');
+
+// POST api/ Saveuser(formData);
+
   }
 
-
+  
 }
