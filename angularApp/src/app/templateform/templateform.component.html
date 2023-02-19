@@ -4,27 +4,23 @@
     </mat-card-title>
     <mat-card-content>
         <form class="login-form" #loginForm="ngForm">
-            
-
-           
+          
             <mat-form-field>
                 
-                <input matInput type="email" name="email"
+                <input matInput type="email" name="email" (blur)="checkemail(email)"
                 ngModel
                 #email="ngModel"
                 required email 
                 minlength="3" maxlength="30"
-                pattern="^[a-z0-9._%+-]+@codemindtechnology.com"
+               
                 placeholder="Email">
-
+                <small class="text-danger" *ngIf="isEmailValid">Email domain not allowed</small>
                 <mat-error *ngIf="email.errors?.required">The email is mandatory</mat-error>
                 <mat-error *ngIf="email.errors?.minlength">
                   your email must have minimum {{email.errors?.minlength.requiredLength}} chars,
                   but it only has {{email.errors?.minlength.actualLength}}.
                 </mat-error>
-                <mat-error *ngIf="email.errors?.pattern"> 
-                  please enter a valid domain email
-                </mat-error>
+             
               </mat-form-field>
             
             

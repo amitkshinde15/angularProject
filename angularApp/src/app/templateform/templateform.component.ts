@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./templateform.component.css']
 })
 export class TemplateformComponent implements OnInit {
-
+  isEmailValid:boolean = false;
   isSubmitted: boolean = false;
   formData  = {
     email: '',
@@ -47,6 +47,19 @@ form.controls['gender'].patchValue('Male');
 
 // POST api/ Saveuser(formData);
 
+  }
+
+  checkemail(email){
+    console.log(email.value);
+
+    const domain = email.value.substring(email.value.lastIndexOf('@') + 1); // gmail.com
+    
+    if(domain.toLowerCase() === 'codemindtechnology.com') 
+    {
+      this.isEmailValid = false;
+    } else {
+      this.isEmailValid = true;
+    }
   }
 
   
