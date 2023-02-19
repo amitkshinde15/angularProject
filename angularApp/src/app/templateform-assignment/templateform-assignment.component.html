@@ -28,11 +28,10 @@
             #lName="ngModel"
             name="lName"
             required
-            [class.is-invalid]="lName.invalid && lName.touched"
             class="form-control"
             [(ngModel)]="user.lastName"
           />
-          <div *ngIf="lName.errors && (lName.invalid || lName.touched)">
+          <div *ngIf="lName.invalid && lName.touched">
             <small class="text-danger" *ngIf="lName.errors"
               >Last Name is required</small
             >
