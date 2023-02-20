@@ -4,6 +4,7 @@
         <h2>Reactive Form</h2>
         <div class="col-md-6 text-left rounded shadow py-5">
             <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()">
+                <div formGroupName="userDeatils">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter user name"
@@ -13,11 +14,31 @@
                     <label for="email">Email</label>
                     <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
                 </div>
+            </div>
+                <small class="text-danger" 
+                *ngIf="myReactiveForm.get('userDeatils.email').invalid && myReactiveForm.get('userDeatils.email').touched">
+                Please enter valid email</small>
+                
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select class="form-select">
+                    <option *ngFor="let course of courses">{{course}}</option>
+                </select>
+                </div>
             
                 <button type="submit" class="btn btn-primary" style="margin-top: 15px;">
                     Submit</button>
          
             </form>
+            <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+                <div class="col-md-6 rounded shadow py4">
+                  <h2>Form Data</h2>
+                  <p>Username: <strong>  {{ myReactiveForm.get('userDeatils.username').value}}</strong></p>
+                  <p>Email: <strong>  {{ myReactiveForm.get('userDeatils.email').value}}</strong></p>
+                  <p>Course: <strong>  {{ myReactiveForm.get('course').value}}</strong></p>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

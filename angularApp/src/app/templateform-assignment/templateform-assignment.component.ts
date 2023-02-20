@@ -14,6 +14,7 @@ export class TemplateformAssignmentComponent implements OnInit {
   user = new userform('','','' ,'','', true ,'','');
   userAge = true;
   password = true;
+  isEmailValid = false;
  
 
   constructor() { }
@@ -41,10 +42,21 @@ export class TemplateformAssignmentComponent implements OnInit {
     }
 
   }
+  checkEmail(email){
+    console.log(email);
+      if(email.includes('@') && email.includes('.com')){
+        this.isEmailValid = false;
+        
+      }
+      else{
+        this.isEmailValid = true;
+      }
+
+    
+  }
   submitForm(form){
     alert('Form submitted successfully');
     form.reset();
-
   }
 
 }
