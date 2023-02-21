@@ -10,6 +10,9 @@
                     <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter user name"
                     >
                 </div>
+                <small class="text-danger" *ngIf="myReactiveForm.get('userDeatils.username').invalid && myReactiveForm.get('userDeatils.username').touched">
+                       Enter Username atleast 3 char     
+                </small>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
