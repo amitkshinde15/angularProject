@@ -1,0 +1,53 @@
+<mat-card class="login-page">
+    <mat-card-title>
+        Reactive Form Assignment
+    </mat-card-title>
+    <mat-card-content>
+        <form class="login-form" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+         
+            <mat-form-field>
+                <input matInput type="email" formControlName="email" placeholder="Email" >
+            </mat-form-field>
+            <mat-error *ngIf="myReactiveForm.get('email').errors?.required && myReactiveForm.get('email').touched">Please Enter email</mat-error>
+            <mat-error *ngIf="myReactiveForm.get('email').errors?.email && myReactiveForm.get('email').touched">Please Enter valid email</mat-error>
+
+            <mat-form-field>
+                <mat-select formControlName="subScription" placeholder="Subscription">
+                    <mat-option *ngFor="let sub of subScription"  value="{{sub}}">{{sub}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+
+            <mat-form-field>
+                <input matInput type="password" formControlName="password" placeholder="Password">
+            </mat-form-field>
+            <mat-error *ngIf="myReactiveForm.get('password').errors?.required && myReactiveForm.get('password').touched">Please Enter password</mat-error>
+          
+            <mat-form-field>
+                <input placeholder="Select Date"  formControlName="date" matInput [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate">
+                <mat-datepicker-toggle [for]="myDatePicker" matSuffix>
+                </mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+            </mat-form-field>
+            <mat-error *ngIf="myReactiveForm.get('date').invalid && myReactiveForm.get('date').touched">Please select date</mat-error>
+       
+            <button  mat-raised-button color="primary" >Submit</button>
+        </form>
+     
+    </mat-card-content>
+</mat-card>
+
+<div class="container" *ngIf="isSubmitted">
+    
+      <h2>Form Data</h2>
+      <p>Email: <strong>  {{ myReactiveForm.value.email}}</strong></p>
+      <p>SubScription: <strong>  {{ myReactiveForm.get('subScription').value}}</strong></p>
+      <p>Password: <strong>  {{ myReactiveForm.get('password').value}}</strong></p>
+      <p>Date: <strong>  {{ myReactiveForm.get('date').value.toLocaleDateString()}}</strong></p>
+
+    </div>
+
+
+  
+
+

@@ -1,0 +1,14 @@
+.login-page {
+    max-width: 350px;
+    margin-left: 100px ;
+    background-color: #ecf0f1;
+   
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
