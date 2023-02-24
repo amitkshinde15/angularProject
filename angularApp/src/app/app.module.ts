@@ -48,6 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TemplateformAssignmentComponent } from './templateform-assignment/templateform-assignment.component';
 import { ReactiveformAssignmentComponent } from './reactiveform-assignment/reactiveform-assignment.component';
+import { RegestrationFormComponent } from './hiteshRegestration-form/regestration-form.component';
 
 
 
@@ -73,7 +74,8 @@ import { ReactiveformAssignmentComponent } from './reactiveform-assignment/react
     CustomdirectiveComponent,
     ReactiveformComponent,
     TemplateformAssignmentComponent,
-    ReactiveformAssignmentComponent
+    ReactiveformAssignmentComponent,
+    RegestrationFormComponent
   
     
   ],

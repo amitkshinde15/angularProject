@@ -12,7 +12,7 @@ export class ReactiveformAssignmentComponent implements OnInit {
   minDate = new Date(); 
   maxDate = new Date(2024, 1 , 27);  
   subScription = ['Basic','Advanced','Pro']; 
-  
+  public showPassword: boolean = false;
   constructor() { 
     this.createForm();
   }
@@ -30,13 +30,20 @@ export class ReactiveformAssignmentComponent implements OnInit {
 
   ngOnInit() {
    }
-
+   
    onSubmit(){
-    this.isSubmitted = true;
-    console.log('My Form', this.myReactiveForm.value);
+    if(this.myReactiveForm.valid){
+      this.isSubmitted = true;
+    }
+    
     this.myReactiveForm.controls['email'].markAsTouched();
     this.myReactiveForm.controls['password'].markAsTouched();
     this.myReactiveForm.controls['date'].markAsTouched();
-    
+ 
+    console.log('My Form', this.myReactiveForm.value);    
    }
+
+   public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 }
