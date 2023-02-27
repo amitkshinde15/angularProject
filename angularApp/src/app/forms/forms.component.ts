@@ -17,7 +17,7 @@ export class FormsComponent implements OnInit {
 
   maxDate = new Date();  
   showPassword: boolean = false;
-  show_eye: Boolean = false;
+  
   
   matchingPasswordsGroup: FormGroup;
   countryPhoneGroup: FormGroup;
@@ -153,11 +153,9 @@ export class FormsComponent implements OnInit {
     console.log(value);
   }
 
-  public togglePasswordVisibility(val): void {
-    this.showPassword = !this.showPassword;
-    console.log(val);
-    
-    
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;  
   }
+
 
 }

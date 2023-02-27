@@ -104,7 +104,7 @@
         <div formGroupName="matchingPasswords">
           <mat-form-field class="full-width">
             <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" formControlName="password" required>
-            <mat-icon type="button" matSuffix (click)="togglePasswordVisibility(ngSubmit)">
+            <mat-icon type="button" matSuffix (click)="togglePasswordVisibility()">
               {{showPassword?'visibility_off':'visibility'}}
           </mat-icon>
             <mat-error *ngFor="let validation of account_validation_messages.password">
@@ -114,7 +114,7 @@
 
           <mat-form-field class="full-width">
             <input matInput [type]="showPassword ? 'text' : 'password'"  placeholder="Confirm Password" formControlName="confirm_password"  [errorStateMatcher]="parentErrorStateMatcher" required>
-            <mat-icon type="button" matSuffix (click)="togglePasswordVisibility(ngSubmit)">
+            <mat-icon type="button" matSuffix (click)="togglePasswordVisibility()">
               {{showPassword?'visibility_off':'visibility'}}
             </mat-icon>
             <mat-error *ngFor="let validation of account_validation_messages.confirm_password">
