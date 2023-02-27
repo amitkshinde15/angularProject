@@ -3,7 +3,7 @@
 <div [ngStyle]="{'background-image':bgColor()}">
     <div class="container" [ngStyle]="{'background-image':bgColor()}">
         <div class="row justify-content-center">
-            <div class="col-md-7 text left rounded shadow py-3" id="shadowBG" [ngStyle]="{'background-image':formColor()}" >
+            <div class="col-md-8 text left rounded shadow py-3" id="shadowBG" [ngStyle]="{'background-image':formColor()}" >
                 
                 <div class="text-center" id="topLabel" [ngStyle]="{'background-image':formColor()}">
 
@@ -81,7 +81,7 @@
 
                             <mat-form-field appearance="fill">
                             <mat-label>Enter your password</mat-label>
-                            <input type="button" matInput [type]="hide ? 'password' : 'text'" formControlName="Password" #pw>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="Password" #pw>
                             <small class="text-danger" *ngIf="myRegestration.get('Password').touched && !myRegestration.get('Password').dirty">Please enter password</small>
                             <small class="text-danger" *ngIf="myRegestration.get('Password').errors?.minlength && myRegestration.get('Password').errors?.pattern">Password must contain at least one number, one uppercase and a lowercase letter 
                             and at least 8 characters</small>  
@@ -96,7 +96,7 @@
                         
                             <mat-form-field appearance="fill" class="Confirmedpassword">
                             <mat-label>confirmed password</mat-label>
-                            <input type = "button" matInput [type]="hide ? 'password' : 'text'" formControlName="Confirm_password" #cpw (keyup)='checkPasswords(pw.value, cpw.value)'>
+                            <input  matInput [type]="hide ? 'password' : 'text'" formControlName="Confirm_password" #cpw (keyup)='checkPasswords(pw.value, cpw.value)'>
                             <small class="text-danger" *ngIf="myRegestration.get('Confirm_password').touched && !myRegestration.get('Confirm_password').dirty">Please enter confirm password</small>
                             <small class="text-danger" *ngIf="myRegestration.get('Confirm_password').errors?.mustMatch">Confirm password did not match</small>
                             <small *ngIf='!passwordsMatching && isConfirmPasswordDirty' class="text-danger">Password did not match</small>

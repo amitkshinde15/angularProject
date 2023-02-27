@@ -49,8 +49,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { TemplateformAssignmentComponent } from './templateform-assignment/templateform-assignment.component';
 import { ReactiveformAssignmentComponent } from './reactiveform-assignment/reactiveform-assignment.component';
 import { RegestrationFormComponent } from './hiteshRegestration-form/regestration-form.component';
-
-
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -75,8 +74,8 @@ import { RegestrationFormComponent } from './hiteshRegestration-form/regestratio
     ReactiveformComponent,
     TemplateformAssignmentComponent,
     ReactiveformAssignmentComponent,
-    RegestrationFormComponent
-  
+    RegestrationFormComponent,
+    FormsComponent
     
   ],
   imports: [

@@ -12,6 +12,7 @@ export class RegestrationFormComponent implements OnInit {
   isConfirmPasswordDirty = false;
   confirmPasswordClass = 'form-control';
   isEmailValid:boolean = false;
+ 
   myRegestration:FormGroup;
   cities:string[] = ['Mumbai', 'Kolkata', 'Delhi'];
   

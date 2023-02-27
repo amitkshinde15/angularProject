@@ -24,6 +24,7 @@
     "bootstrap": "^5.2.3",
     "eventemitter3": "^4.0.7",
     "follow-redirects": "^1.14.9",
+    "google-libphonenumber": "^3.2.32",
     "hammerjs": "^2.0.8",
     "jquery": "^3.6.3",
     "node-releases": "^2.0.2",

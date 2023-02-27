@@ -28,6 +28,17 @@
                     <option *ngFor="let course of courses">{{course}}</option>
                 </select>
                 </div>
+
+                <div class="formgroup" formArrayName="skills">
+                    <label>Skills</label>
+                    <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+                        <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+                        
+                    </ng-container>
+                    
+                    <button type="button" class="btn btn-light btn-small mt-4 btn-add" (click)="OnAddSkills()"><span>+</span>Add Skills</button>
+                    
+                </div>
             
                 <button type="submit" class="btn btn-primary" style="margin-top: 15px;">
                     Submit</button>

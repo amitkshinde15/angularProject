@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactiveform',
@@ -15,6 +15,24 @@ export class ReactiveformComponent implements OnInit {
   courses =['Angular','HTML','CSS']
 
   ngOnInit() {
+    // setTimeout(() => {
+    //   this.myReactiveForm.setValue({
+    //     'userDeatils' : {
+    //       'username': 'Codemind123',
+    //       'email': 'codemind@gamil.com'
+    //     },
+    //     'course': 'HTML',
+    //     'skills': ['angular']
+    //   })
+    // })
+    setTimeout(() => {
+      this.myReactiveForm.patchValue({
+        'userDeatils' : {
+                 'username': 'Codemind123',
+                'email': 'codemind@gamil.com'
+               }
+      })
+    }, 5000)
   }
 
 
@@ -25,7 +43,10 @@ export class ReactiveformComponent implements OnInit {
       'username' : new FormControl(null, [Validators.required, Validators.minLength(3)]),
       'email': new FormControl(null, [Validators.required, Validators.email])
       }),
-      'course': new FormControl('Angular')
+      'course': new FormControl('Angular'),
+      'skills': new FormArray([
+        new FormControl(null, Validators.required)
+      ])
     });
   }
 
@@ -34,5 +55,8 @@ export class ReactiveformComponent implements OnInit {
     alert('method called');
     console.log('My ReactiveForm', this.myReactiveForm.value)
   }
-                                      
+   
+  OnAddSkills() {
+    (<FormArray> this.myReactiveForm.get('skills')).push(new FormControl(null, Validators.required));
+  }
 }

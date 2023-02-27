@@ -2,7 +2,7 @@
     <mat-card-title>
         Reactive Form Assignment
     </mat-card-title>
-    <mat-card-content>
+        
         <form class="login-form" [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
          
             <mat-form-field>
@@ -19,10 +19,11 @@
             
 
             <mat-form-field>
-                <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password">
-                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                <input matInput  [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password">
+                    <mat-icon type="button" matSuffix (click)="togglePasswordVisibility()">
                     {{showPassword?'visibility_off':'visibility'}}
                 </mat-icon>
+               
             </mat-form-field>
             <mat-error *ngIf="myReactiveForm.get('password').errors?.required && myReactiveForm.get('password').touched">Please Enter password</mat-error>
           
@@ -38,7 +39,7 @@
             <!-- <button  mat-raised-button color="primary" [disabled]="!myReactiveForm.valid">Submit</button> -->
         </form>
      
-    </mat-card-content>
+  
 </mat-card>
 
 <div class="container" *ngIf="isSubmitted">
