@@ -7,20 +7,35 @@
                 <div formGroupName="userDeatils">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter user name"
-                    >
+                    <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter user name">
                 </div>
-                <small class="text-danger" *ngIf="myReactiveForm.get('userDeatils.username').invalid && myReactiveForm.get('userDeatils.username').touched">
-                       Enter Username atleast 3 char     
-                </small>
+                
+                <small class="text-danger" *ngIf="!myReactiveForm.get('userDeatils.username').valid && 
+                    myReactiveForm.get('userDeatils.username').touched">
+                        
+                    <span *ngIf="myReactiveForm.get('userDeatils.username').errors['required']">
+                        User name not valid
+                    </span>
+                    <span *ngIf="myReactiveForm.get('userDeatils.username').errors['namesNotAllowed']">
+                        {{myReactiveForm.get('userDeatils.username').value}} is not allowed
+                    </span>
+                    </small>
+               
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter email address">
                 </div>
             </div>
                 <small class="text-danger" 
-                *ngIf="myReactiveForm.get('userDeatils.email').invalid && myReactiveForm.get('userDeatils.email').touched">
-                Please enter valid email</small>
+                *ngIf="!myReactiveForm.get('userDeatils.email').valid && 
+                myReactiveForm.get('userDeatils.email').touched">
+                <span *ngIf="myReactiveForm.get('userDeatils.email').invalid">
+                    Enter valid email
+                </span>
+                <span *ngIf="myReactiveForm.get('userDeatils.email').errors['emailNotAllowed']">
+                    {{myReactiveForm.get('userDeatils.email').value}} is not allowed
+                </span>
+            </small>
                 
                 <div class="form-group">
                     <label for="course">Select Course</label>

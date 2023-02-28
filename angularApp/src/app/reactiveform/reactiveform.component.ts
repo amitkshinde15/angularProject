@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactiveform',
@@ -7,6 +8,8 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
+
+  notAllowedNames = ['Rocky', 'Jack'];
   isSubmitted:boolean = false;
   myReactiveForm: FormGroup;
   constructor() { 
@@ -25,14 +28,14 @@ export class ReactiveformComponent implements OnInit {
     //     'skills': ['angular']
     //   })
     // })
-    setTimeout(() => {
-      this.myReactiveForm.patchValue({
-        'userDeatils' : {
-                 'username': 'Codemind123',
-                'email': 'codemind@gamil.com'
-               }
-      })
-    }, 5000)
+    // setTimeout(() => {
+    //   this.myReactiveForm.patchValue({
+    //     'userDeatils' : {
+    //              'username': 'Codemind123',
+    //             'email': 'codemind@gamil.com'
+    //            }
+    //   })
+    // }, 5000)
   }
 
 
@@ -40,8 +43,8 @@ export class ReactiveformComponent implements OnInit {
   {
     this.myReactiveForm = new FormGroup({
       'userDeatils': new FormGroup({
-      'username' : new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      'email': new FormControl(null, [Validators.required, Validators.email])
+        'username' : new FormControl(null, [Validators.required,this.NaNames.bind(this) ]),
+      'email': new FormControl(null, [Validators.required, Validators.email],this.NaEmails)
       }),
       'course': new FormControl('Angular'),
       'skills': new FormArray([
@@ -58,5 +61,26 @@ export class ReactiveformComponent implements OnInit {
    
   OnAddSkills() {
     (<FormArray> this.myReactiveForm.get('skills')).push(new FormControl(null, Validators.required));
+  }
+  NaNames(control: FormControl) {
+
+    if(this.notAllowedNames.indexOf(control.value) !== -1) {
+      return {'namesNotAllowed': true}
+    } else {
+      return null;
+    }
+ }
+ NaEmails(control: FormControl) : Promise<any> | Observable<any> 
+  {
+    const myResponse = new Promise<any> ((resolve, reject) => {
+      setTimeout(() => {
+        if(control.value == 'codemindtechnology@gmail.com') {
+          resolve({'emailNotAllowed': true})
+        } else {
+          resolve(null)
+        }
+      })
+    })
+    return myResponse;
   }
 }
