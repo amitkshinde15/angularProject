@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MyserviceService } from '../Services/myservice.service';
 
 @Component({
   selector: 'app-templateform',
@@ -7,6 +8,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./templateform.component.css']
 })
 export class TemplateformComponent implements OnInit {
+  age;
+  showAge;
   isEmailValid:boolean = false;
   isSubmitted: boolean = false;
   formData  = {
@@ -27,9 +30,11 @@ export class TemplateformComponent implements OnInit {
     }
   ]
   emails='';
-  constructor() { }
+  constructor(private objSerive : MyserviceService) { }
 
   ngOnInit() {
+  
+    this.objSerive.print();
   }
 
   login(form: NgForm) {
@@ -61,6 +66,11 @@ form.controls['gender'].patchValue('Male');
       this.isEmailValid = true;
     }
   }
-
+  ageCalculator(){
+    // used services 
+   
+    
+    this.showAge = this.objSerive.ageCalculator(this.age);
+  }
 
 }

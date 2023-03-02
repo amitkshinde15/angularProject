@@ -50,6 +50,8 @@ import { TemplateformAssignmentComponent } from './templateform-assignment/templ
 import { ReactiveformAssignmentComponent } from './reactiveform-assignment/reactiveform-assignment.component';
 import { RegestrationFormComponent } from './hiteshRegestration-form/regestration-form.component';
 import { FormsComponent } from './forms/forms.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServerTableComponent } from './server-table/server-table.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,8 @@ import { FormsComponent } from './forms/forms.component';
     TemplateformAssignmentComponent,
     ReactiveformAssignmentComponent,
     RegestrationFormComponent,
-    FormsComponent
+    FormsComponent,
+    ServerTableComponent
     
   ],
   imports: [
@@ -106,7 +109,8 @@ import { FormsComponent } from './forms/forms.component';
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

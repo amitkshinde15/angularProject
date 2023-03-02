@@ -29,14 +29,22 @@
                 <small class="text-danger" 
                 *ngIf="!myReactiveForm.get('userDeatils.email').valid && 
                 myReactiveForm.get('userDeatils.email').touched">
-                <span *ngIf="myReactiveForm.get('userDeatils.email').invalid">
+                
+                <span *ngIf="myReactiveForm.get('userDeatils.email').touched && 
+                myReactiveForm.get('userDeatils.email').pristine 
+                ">
+                    Email is required
+                </span>
+                <span *ngIf="myReactiveForm.get('userDeatils.email').invalid  
+                && myReactiveForm.get('userDeatils.email').touched
+                 && !myReactiveForm.get('userDeatils.email').errors?.emailNotAllowed">
                     Enter valid email
                 </span>
-                <span *ngIf="myReactiveForm.get('userDeatils.email').errors['emailNotAllowed']">
-                    {{myReactiveForm.get('userDeatils.email').value}} is not allowed
+                <span *ngIf="myReactiveForm.get('userDeatils.email').errors?.emailNotAllowed">
+                    {{myReactiveForm.get('userDeatils.email').value}} is already taken
                 </span>
-            </small>
-                
+                </small>
+               
                 <div class="form-group">
                     <label for="course">Select Course</label>
                     <select class="form-select">
@@ -47,7 +55,7 @@
                 <div class="formgroup" formArrayName="skills">
                     <label>Skills</label>
                     <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
-                        <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+                        <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills" style="width: 100px;">
                         
                     </ng-container>
                     
@@ -67,12 +75,21 @@
                   <p>Course: <strong>  {{ myReactiveForm.get('course').value}}</strong></p>
 
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </div>
 
+<input type="date" [(ngModel)]="age">
+<button (click)="ageCalculator()">Calculate</button>
+<p *ngIf="age">{{showAge}}</p>
 
+<div>
+<ng-container *ngFor="let product of products">
+    Product Name : <strong class="text-success">{{product.name}}</strong>
+    Product Id : <strong class="text-success">{{product.id}}</strong>
+    
+    </ng-container>
 
-
+</div>
  

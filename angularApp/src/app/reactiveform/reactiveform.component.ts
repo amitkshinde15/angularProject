@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { MyserviceService } from '../Services/myservice.service';
 
 @Component({
   selector: 'app-reactiveform',
@@ -8,16 +9,22 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
-
+  products = {};
+  age;
+  showAge;
   notAllowedNames = ['Rocky', 'Jack'];
   isSubmitted:boolean = false;
   myReactiveForm: FormGroup;
-  constructor() { 
+  constructor(private _fb: FormBuilder, private myservice: MyserviceService) { 
     this.createForm();
   }
   courses =['Angular','HTML','CSS']
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.products = this.myservice.products;
+  }
+
+  // ngOnInit() {
     // setTimeout(() => {
     //   this.myReactiveForm.setValue({
     //     'userDeatils' : {
@@ -36,21 +43,35 @@ export class ReactiveformComponent implements OnInit {
     //            }
     //   })
     // }, 5000)
-  }
+  // }
 
+  ageCalculator(){
+    // used services 
+    let objMyserviceService = new MyserviceService();
+    
+    this.showAge = objMyserviceService.ageCalculator(this.age);
+  }
 
   createForm()
   {
-    this.myReactiveForm = new FormGroup({
-      'userDeatils': new FormGroup({
-        'username' : new FormControl(null, [Validators.required,this.NaNames.bind(this) ]),
-      'email': new FormControl(null, [Validators.required, Validators.email],this.NaEmails)
+    // this.myReactiveForm = new FormGroup({
+    //   'userDeatils': new FormGroup({
+    //     'username' : new FormControl(null, [Validators.required,this.NaNames.bind(this) ]),
+    //   'email': new FormControl(null, [Validators.required, Validators.email],this.NaEmails)
+    //   }),
+    //   'course': new FormControl('Angular'),
+    //   'skills': new FormArray([
+    //     new FormControl(null, Validators.required)
+    //   ])
+    // });
+    this.myReactiveForm = this._fb.group({
+      userDeatils: this._fb.group({
+        username: ['', [Validators.required, this.NaNames.bind(this) ]],
+        email: ['', [Validators.required, Validators.email], this.NaEmails]
       }),
-      'course': new FormControl('Angular'),
-      'skills': new FormArray([
-        new FormControl(null, Validators.required)
-      ])
-    });
+      course: ['Angular'],
+      skills: this._fb.array([])
+     })
   }
 
   OnSubmit() {
@@ -74,7 +95,7 @@ export class ReactiveformComponent implements OnInit {
   {
     const myResponse = new Promise<any> ((resolve, reject) => {
       setTimeout(() => {
-        if(control.value == 'codemindtechnology@gmail.com') {
+        if(control.value === 'codemindtechnology@gmail.com') {
           resolve({'emailNotAllowed': true})
         } else {
           resolve(null)
@@ -83,4 +104,5 @@ export class ReactiveformComponent implements OnInit {
     })
     return myResponse;
   }
+
 }
