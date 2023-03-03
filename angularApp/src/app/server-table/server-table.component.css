@@ -49,3 +49,11 @@
   .bg-brown {
     background-color: brown;
   }
+  tr:hover {
+    background-color: rgb(173, 150, 150);
+  }
+  input{
+    margin-left: 65px;
+    margin-bottom: 10px;
+  }
+

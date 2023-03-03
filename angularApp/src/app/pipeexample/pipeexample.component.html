@@ -1,0 +1,20 @@
+<div>
+    Today's Date : {{todaysDate | date: 'fullDate' | lowercase}}
+</div>
+
+<div>
+    Price :
+    <p>{{price | currency:'INR'}}</p>
+    <p>{{price | currency:'USD'}}</p>
+    <p>{{price | currency:'EUR'}}</p>
+</div>
+
+<div>
+    <p>Json Pipe</p>
+    <p>{{employee | json}}</p>
+</div>
+
+<div>
+    <p>Custom pipe example </p>
+    <p>{{countLenght | custom}}</p>
+</div>

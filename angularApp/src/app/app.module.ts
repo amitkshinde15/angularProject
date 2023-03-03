@@ -52,9 +52,15 @@ import { RegestrationFormComponent } from './hiteshRegestration-form/regestratio
 import { FormsComponent } from './forms/forms.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServerTableComponent } from './server-table/server-table.component';
+import { PipeexampleComponent } from './pipeexample/pipeexample.component';
+import { CustomPipe } from './custom.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProdcutFilterComponent } from './prodcut-filter/prodcut-filter.component';
+
 
 @NgModule({
   declarations: [
+    // component, customDirective, custom pipe.
     AppComponent,
     DemoComponent,
     Test1Component,
@@ -78,10 +84,16 @@ import { ServerTableComponent } from './server-table/server-table.component';
     ReactiveformAssignmentComponent,
     RegestrationFormComponent,
     FormsComponent,
-    ServerTableComponent
+    ServerTableComponent,
+    PipeexampleComponent,
+    CustomPipe,
+    SearchPipe,
+    ProdcutFilterComponent
+   
     
   ],
   imports: [
+    // any module are using then we need to import here
    BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -112,7 +124,7 @@ import { ServerTableComponent } from './server-table/server-table.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [], //Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,6 +28,13 @@
    -->
 
    <h3>User Details</h3>
+   <div class="input-group">
+    <div class="form-outline">
+      <input id="search-input" type="search" id="form1" class="form-control" [(ngModel)]="searchText" 
+      (keyup)="searchUsers()" placeholder="Search by name"/>
+    </div>  
+  </div>
+
 <table class="table table-striped">
   <thead>
     <tr>

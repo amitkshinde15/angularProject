@@ -9,6 +9,7 @@ import { DemoService } from '../Services/demo.service';
 export class ServerTableComponent implements OnInit {
   
   users;
+  searchText: string = '';
  
   constructor(private demoService : DemoService) { }
 
@@ -16,11 +17,27 @@ export class ServerTableComponent implements OnInit {
     this.demoService.getUsers().subscribe(res => {
       console.log('user api results', res);
       this.users = res;
-   
+       
+      // for (let user of this.users) {
+      //   console.log(user.address.street);
+      // }
     }, err => {
       console.log(err);
     });
   }
-  
+  searchUsers() {
+    if (this.searchText.trim() !== '') { // check if search input is not empty
+      this.users = this.users.filter(user => {
+        return user.name.toLowerCase().includes(this.searchText.toLowerCase());
+      });
+    } else {
+      this.demoService.getUsers().subscribe(res => {
+        console.log('user api results', res);
+        this.users = res;
+      }, err => {
+        console.log(err);
+      });
+    }
+  }
   
 }
