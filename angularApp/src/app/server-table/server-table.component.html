@@ -31,7 +31,7 @@
    <div class="input-group">
     <div class="form-outline">
       <input id="search-input" type="search" id="form1" class="form-control" [(ngModel)]="searchText" 
-      (keyup)="searchUsers()" placeholder="Search by name"/>
+       placeholder="Search by name"/>
     </div>  
   </div>
 
@@ -48,8 +48,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users; let even = even" [ngClass]="{'table-even-row': even, 'table-odd-row': !even}">
-      <td>{{ user.id }}</td>
+    <tr *ngFor="let user of users | search: searchText" [ngClass]="{'table-even-row': even, 'table-odd-row': !even}">
+      <td><a [routerLink]="['/userdetails', user.id]">{{user.id}}</a></td>  
       <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</td>
@@ -59,3 +59,5 @@
     </tr>
   </tbody>
 </table>
+
+

@@ -1,0 +1,28 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="bg-brown text-white">ID</th>
+      <th class="bg-brown text-white">Name</th>
+      <th class="bg-brown text-white">Email</th>
+      <th class="bg-brown text-white">Address</th>
+      <th class="bg-brown text-white">Phone</th>
+      <th class="bg-brown text-white">Website</th>
+      <th class="bg-brown text-white">Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{user.id}}</td>  
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+      <td>{{ user.company.name}}, {{user.company.catchPhrase}}, {{user.company.bs}} </td>
+    </tr>
+  </tbody>
+</table>
+
+
+

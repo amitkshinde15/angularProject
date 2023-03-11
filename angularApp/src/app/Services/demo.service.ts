@@ -13,4 +13,11 @@ export class DemoService {
   getUsers () {
    return this.httpClient.get(this.apiUrl);
   }
+
+  getpost(){
+    return this.httpClient.get(this.apiUrl);
+   }
+   getPostById(id: number){
+    return this.httpClient.get(this.apiUrl+ '/' + id);
+   }
 }

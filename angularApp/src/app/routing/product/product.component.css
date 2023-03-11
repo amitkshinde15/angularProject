@@ -1,0 +1,11 @@
+.card{
+    display: inline-block;
+    margin: 10px;
+    width: 20%;
+}
+.card-img-top{
+    height: 200px;
+}
+.row{
+    height: 50px;
+}

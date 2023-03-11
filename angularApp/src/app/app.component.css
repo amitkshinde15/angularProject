@@ -8,3 +8,14 @@
 h2 {
     color: red;
 }
+.col-md-6{
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: antiquewhite;
+}
+.row{
+    border: 5px solid green;
+}
+.container{
+    border: 2px solid black;
+}

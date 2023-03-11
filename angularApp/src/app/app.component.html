@@ -20,33 +20,61 @@
 <app-card [title]="posts[1].title" [content]="posts[1].content"></app-card>   -->
 
 <!-- <app-output-decorator (fromChild)="onParent($event)"> -->
-   
+
 <!-- </app-output-decorator>
 <app-ngfor></app-ngfor> -->
-  <!-- <app-ngfor-dropdown></app-ngfor-dropdown> -->
+<!-- <app-ngfor-dropdown></app-ngfor-dropdown> -->
 <!-- <app-dropdown></app-dropdown> -->
 <!-- <app-ngswitch></app-ngswitch> -->
 <!-- <app-ngif></app-ngif> -->
- <!-- <app-ngswitch2></app-ngswitch2>  -->
+<!-- <app-ngswitch2></app-ngswitch2>  -->
 <!-- <app-ngstyle></app-ngstyle>
-<app-ngclass></app-ngclass> 
-<router-outlet></router-outlet> -->
+<app-ngclass></app-ngclass>  -->
+
 <!-- <app-directive-assignment></app-directive-assignment> -->
 <!-- <app-test1></app-test1> -->
 
 <!-- <app-customdirective></app-customdirective> -->
 <!-- <app-templateform></app-templateform> -->
 <!-- <app-templateform-assignment></app-templateform-assignment> -->
-  <!-- <app-regestration-form></app-regestration-form> -->
+<!-- <app-regestration-form></app-regestration-form> -->
 <!-- <app-reactiveform-assignment></app-reactiveform-assignment> -->
 <!-- <app-forms-page></app-forms-page> -->
 <!-- <app-reactiveform></app-reactiveform> -->
 <!-- <app-server-table></app-server-table> -->
 <!-- <app-pipeexample></app-pipeexample> -->
-<app-prodcut-filter></app-prodcut-filter>
+<!-- <app-prodcut-filter></app-prodcut-filter> -->
 
+<!-- <div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <app-comp1></app-comp1>
+    </div>
+    <div class="col-md-6">
+      <app-comp2></app-comp2>
+    </div>
+    <div class="col-md-6">
+      <app-comp3></app-comp3>
+    </div>
+    <div class="col-md-6">
+      <app-comp4></app-comp4>
+    </div>
+  </div>
+</div> -->
 
-
-
-
+<header>
+  <nav>
+    <ul class="nav nav-tabs ">
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/aboutus">AboutUs</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/contactus">ContactUs</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/product">Product</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/post">Post</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/user">User</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a> </li>
+      <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="/order">Order</a> </li>
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>
 

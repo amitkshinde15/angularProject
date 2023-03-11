@@ -17,8 +17,10 @@ import { Ngswitch2Component } from './ngswitch2/ngswitch2.component';
 import { NgstyleComponent } from './ngstyle/ngstyle.component';
 import { NgclassComponent } from './ngclass/ngclass.component';
 import { DirectiveAssignmentComponent } from './directive-assignment/directive-assignment.component';
-import { CustomDirective } from './custom.directive';
+//import { CustomDirective } from './custom.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular material module
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
@@ -42,6 +44,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 import { CustomdirectiveComponent } from './customdirective/customdirective.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -56,6 +59,22 @@ import { PipeexampleComponent } from './pipeexample/pipeexample.component';
 import { CustomPipe } from './custom.pipe';
 import { SearchPipe } from './search.pipe';
 import { ProdcutFilterComponent } from './prodcut-filter/prodcut-filter.component';
+import { Comp1Component } from './fourcompfolder/comp1/comp1.component';
+import { Comp2Component } from './fourcompfolder/comp2/comp2.component';
+import { Comp3Component } from './fourcompfolder/comp3/comp3.component';
+import { Comp4Component } from './fourcompfolder/comp4/comp4.component';
+import { UtilityService } from './Services/utility.service';
+import { AboutusComponent } from './routing/aboutus/aboutus.component';
+import { ContactusComponent } from './routing/contactus/contactus.component';
+import { HomeComponent } from './routing/home/home.component';
+
+import { PagenotfoundComponent } from './routing/pagenotfound/pagenotfound.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { ProductModule } from './routing/product.module';
+import { OrdersModule } from './orders/orders.module';
+import { ServertabledetailsComponent } from './servertabledetails/servertabledetails.component';
 
 
 @NgModule({
@@ -76,7 +95,7 @@ import { ProdcutFilterComponent } from './prodcut-filter/prodcut-filter.componen
     NgstyleComponent,
     NgclassComponent,
     DirectiveAssignmentComponent,
-    CustomDirective,
+   // CustomDirective,
     TemplateformComponent,
     CustomdirectiveComponent,
     ReactiveformComponent,
@@ -88,7 +107,20 @@ import { ProdcutFilterComponent } from './prodcut-filter/prodcut-filter.componen
     PipeexampleComponent,
     CustomPipe,
     SearchPipe,
-    ProdcutFilterComponent
+    ProdcutFilterComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    
+    PagenotfoundComponent,
+    DemopostComponent,
+    DemopostdetailsComponent,
+    UserdetailsComponent,
+    ServertabledetailsComponent
    
     
   ],
@@ -122,7 +154,10 @@ import { ProdcutFilterComponent } from './prodcut-filter/prodcut-filter.componen
     MatStepperModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule,
+    OrdersModule
+   
   ],
   providers: [], //Services
   bootstrap: [AppComponent]
