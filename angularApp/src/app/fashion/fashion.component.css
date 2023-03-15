@@ -1,0 +1,12 @@
+.card{
+    display: inline-block;
+    margin: 10px;
+    width: 20%;
+}
+.card-img-top{
+    height: 200px;
+    border-radius: 50%;
+}
+.row{
+    height: 50px;
+}

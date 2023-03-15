@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { element } from 'protractor';
+
 import { Employee } from './model/employee';
+
 
 @Component({
   selector: 'app-root',
@@ -32,13 +33,13 @@ export class AppComponent {
   }
   constructor(){
     this.getValueFromServer();
-    this.getCurrentDate();
-  
+    this.getCurrentDate();  
+  }
+  ngOnInit():void{
+
   }
   getValueFromServer(){
-    this.empCount = 100000;
-    
-    
+    this.empCount = 100000;  
   }
   //imageUrl = 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
   getCurrentDate(){
@@ -47,9 +48,6 @@ export class AppComponent {
  
   onParent(val : Employee) {
       console.log('Employee details', val);
-      
-    
-    
     
   }
 }

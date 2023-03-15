@@ -19,3 +19,9 @@ h2 {
 .container{
     border: 2px solid black;
 }
+.nav{
+    background-color: black;
+}
+.nav-link{
+    color: white;
+}

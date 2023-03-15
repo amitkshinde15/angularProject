@@ -75,6 +75,10 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { ProductModule } from './routing/product.module';
 import { OrdersModule } from './orders/orders.module';
 import { ServertabledetailsComponent } from './servertabledetails/servertabledetails.component';
+import { FashionModule } from './fashion/fashion.module';
+import { CustomerModule } from './customer/customer.module';
+import { AdminModule } from './admin/admin.module';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
@@ -120,7 +124,9 @@ import { ServertabledetailsComponent } from './servertabledetails/servertabledet
     DemopostComponent,
     DemopostdetailsComponent,
     UserdetailsComponent,
-    ServertabledetailsComponent
+    ServertabledetailsComponent,
+    TodoComponent,
+    
    
     
   ],
@@ -156,10 +162,16 @@ import { ServertabledetailsComponent } from './servertabledetails/servertabledet
     ReactiveFormsModule,
     HttpClientModule,
     ProductModule,
-    OrdersModule
+    OrdersModule,
+    FashionModule,
    
   ],
   providers: [], //Services
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log('App module log');
+    
+  }
+ }

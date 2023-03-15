@@ -8,7 +8,7 @@ import { DemoService } from '../Services/demo.service';
 })
 export class ServerTableComponent implements OnInit {
   
-  users = {};
+  users;
   searchText: string = '';
  
   constructor(private demoService : DemoService) { }

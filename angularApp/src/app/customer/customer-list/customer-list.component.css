@@ -1,0 +1,12 @@
+tr:hover {
+    background-color: #f0944f;
+  }
+  h2{
+    text-align: center;
+    color: white;
+    background-color: green;
+    margin: auto;
+  }
+  table{
+    margin: auto;
+  }

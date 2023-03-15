@@ -1,0 +1,42 @@
+
+  <h2>News Table</h2>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let news of resObj.news">
+        <td>{{news.title}}</td>
+        <td>{{news.publisher}}</td>
+        <td><a href="{{news.link}}">{{news.link}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Quotes Table</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Exchange</th>
+        <th>Shortname</th>
+        <th>Industry</th>
+        <th>TypeDisp</th>  
+        <th>Index</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quote of resObj.quotes">
+        <td>{{quote.exchange}}</td>
+        <td>{{quote.shortname}}</td>
+        <td>{{quote.industry}}</td>
+        <td>{{quote.typeDisp}}</td>
+        <td>{{quote.index}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
