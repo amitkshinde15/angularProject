@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class RapidapiService {
   url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US';
+  urlHotel = "https://hotels4.p.rapidapi.com/v2/get-meta-data";
+
   constructor(private httpClient: HttpClient) { }
 
   getFinance(){
@@ -17,4 +19,5 @@ export class RapidapiService {
    return this.httpClient.get(this.url, { headers: header});
 
   }
+
 }

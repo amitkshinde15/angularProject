@@ -1,12 +1,16 @@
 {
   "todos": [
     {
-      "id": 1678862454757,
-      "title": "Format the data of firebase"
+      "id": 1678948570936,
+      "title": "Angular"
     },
     {
-      "id": 1678862531236,
-      "title": "Format the data of firebase"
+      "id": 1678948638178,
+      "title": "JavaScript"
+    },
+    {
+      "id": 1678948645067,
+      "title": "HTML"
     }
   ]
 }

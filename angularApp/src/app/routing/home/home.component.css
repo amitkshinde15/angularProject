@@ -1,3 +1,13 @@
 .btn{
     margin-left: 10px;
 }
+h3{
+    text-align: center;
+}
+.container{
+    margin-top: 15px;
+}
+th{
+    background-color: brown;
+    color: white;
+}

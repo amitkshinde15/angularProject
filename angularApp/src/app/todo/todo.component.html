@@ -1,3 +1,52 @@
-<p>todo works!</p>
+<h2>ToDo List</h2>
+<div class="container">
+    <div id="d1">
+        <button class="btn btn-primary" (click)="createTodo(input)">Create</button>
+    </div>
+    <div class="col-md-6" id="d2">
+        <input type="input" class="form-control" placeholder="Enter Title" #input />
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of todoList">
+                    <td>{{ todo.id }}</td>
+                    <!-- <td>{{ todo.title }}</td> -->
 
-<button class="btn btn-primary" (click)="createTodo()">Create</button>
+                    <td>
+                        <ng-container *ngIf="!todo.editMode">
+                            {{todo.title}}
+                        </ng-container>
+                        <ng-container *ngIf="todo.editMode">
+                            <input type="text" class="form-control" [(ngModel)]="todo.title" />
+                            <button type="button" class="btn btn-icon btn-link" (click)="saveChanges(todo)">
+                                <i class="bi bi-check"></i>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-link text-danger" (click)="cancelChanges(todo)">
+                                <i class="bi bi-x"></i>
+                            </button>
+                        </ng-container>
+                    </td>
+
+                    
+                    
+                    <td>
+                        <button type="button" class="btn btn-icon btn-link" (click)="edit(todo)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-icon btn-link text-danger" (click)="deleteTodo(todo.id)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

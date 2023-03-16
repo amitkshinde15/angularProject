@@ -10,7 +10,7 @@ import { RapidapiService } from 'src/app/Services/rapidapi.service';
 export class CustomerListComponent implements OnInit {
 
   resObj= {}; 
-
+  //DI
   constructor(private rapidapiService: RapidapiService) { }
 
   ngOnInit() {
