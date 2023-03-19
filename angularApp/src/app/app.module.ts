@@ -79,6 +79,7 @@ import { FashionModule } from './fashion/fashion.module';
 import { CustomerModule } from './customer/customer.module';
 import { AdminModule } from './admin/admin.module';
 import { TodoComponent } from './todo/todo.component';
+import { LoginformComponent } from './loginform/loginform.component';
 
 
 @NgModule({
@@ -126,6 +127,7 @@ import { TodoComponent } from './todo/todo.component';
     UserdetailsComponent,
     ServertabledetailsComponent,
     TodoComponent,
+    LoginformComponent
     
    
     

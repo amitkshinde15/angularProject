@@ -1,10 +1,12 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { FashionComponent } from './fashion/fashion.component';
 import { MenswearComponent } from './fashion/menswear/menswear.component';
 import { WomenswearComponent } from './fashion/womenswear/womenswear.component';
+import { LoginformComponent } from './loginform/loginform.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
 import { AboutusComponent } from './routing/aboutus/aboutus.component';
 import { ContactusComponent } from './routing/contactus/contactus.component';
@@ -28,7 +30,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent }, // http://localhost:4200/aboutus
   { path: 'contactus', component: ContactusComponent },
  // { path: 'product', 
-  { path: 'product', component: ProductComponent,
+  { path: 'product', canActivate: [AuthGuard], component: ProductComponent,
     children: [
    // { path: '', component: ProductComponent}, This code is for single router
     { path: 'laptop', component: LaptopComponent },
@@ -41,7 +43,7 @@ const routes: Routes = [
   {path:'user', component: ServerTableComponent},
   {path: 'userdetails/:id', component: ServertabledetailsComponent},
   {path: 'userdetails', component: UserdetailsComponent},
-  {path: 'login', component: TemplateformComponent},
+  {path: 'login', component: LoginformComponent}, //{path: 'login', component: TemplateformComponent},
   {path:'order', component: OrderlistComponent},
   {path:'fashion',
   children:[
