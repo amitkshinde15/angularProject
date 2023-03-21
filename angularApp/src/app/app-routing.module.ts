@@ -6,6 +6,7 @@ import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.comp
 import { FashionComponent } from './fashion/fashion.component';
 import { MenswearComponent } from './fashion/menswear/menswear.component';
 import { WomenswearComponent } from './fashion/womenswear/womenswear.component';
+import { HooksComponent } from './hooks/hooks.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
 import { AboutusComponent } from './routing/aboutus/aboutus.component';
@@ -22,6 +23,7 @@ import { ServertabledetailsComponent } from './servertabledetails/servertabledet
 import { TemplateformComponent } from './templateform/templateform.component';
 import { TodoComponent } from './todo/todo.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { WikiComponent } from './wiki/wiki.component';
 
 
 const routes: Routes = [
@@ -52,6 +54,8 @@ const routes: Routes = [
     { path: 'womens', component: WomenswearComponent}
   ]},
   {path: 'todo', component:TodoComponent},
+  {path: 'wiki', component: WikiComponent},
+  {path: 'hook', component: HooksComponent},
   { path: 'customer', loadChildren:'./customer/customer.module#CustomerModule'},
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
   { path: '**', component: PagenotfoundComponent}

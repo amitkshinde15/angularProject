@@ -53,7 +53,7 @@ import { TemplateformAssignmentComponent } from './templateform-assignment/templ
 import { ReactiveformAssignmentComponent } from './reactiveform-assignment/reactiveform-assignment.component';
 import { RegestrationFormComponent } from './hiteshRegestration-form/regestration-form.component';
 import { FormsComponent } from './forms/forms.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { ServerTableComponent } from './server-table/server-table.component';
 import { PipeexampleComponent } from './pipeexample/pipeexample.component';
 import { CustomPipe } from './custom.pipe';
@@ -80,6 +80,8 @@ import { CustomerModule } from './customer/customer.module';
 import { AdminModule } from './admin/admin.module';
 import { TodoComponent } from './todo/todo.component';
 import { LoginformComponent } from './loginform/loginform.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { WikiComponent } from './wiki/wiki.component';
 
 
 @NgModule({
@@ -120,21 +122,20 @@ import { LoginformComponent } from './loginform/loginform.component';
     AboutusComponent,
     ContactusComponent,
     HomeComponent,
-    
     PagenotfoundComponent,
     DemopostComponent,
     DemopostdetailsComponent,
     UserdetailsComponent,
     ServertabledetailsComponent,
     TodoComponent,
-    LoginformComponent
-    
-   
+    LoginformComponent,
+    HooksComponent,
+    WikiComponent
     
   ],
   imports: [
     // any module are using then we need to import here
-   BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -166,6 +167,7 @@ import { LoginformComponent } from './loginform/loginform.component';
     ProductModule,
     OrdersModule,
     FashionModule,
+    HttpClientJsonpModule
    
   ],
   providers: [], //Services

@@ -77,8 +77,19 @@
       <li class="nav-item"> <a  routerLinkActive="active" routerLink="/customer" class="nav-link">Cutomer</a> </li>
       <li class="nav-item"> <a  routerLinkActive="active" routerLink="/admin" class="nav-link">Admin</a> </li>
       <li class="nav-item"> <a  routerLinkActive="active" routerLink="/todo" class="nav-link">ToDo</a> </li>
+      <li class="nav-item"> <a  routerLinkActive="active" routerLink="/wiki" class="nav-link">Wiki</a> </li>
+      <!-- <li class="nav-item"> <a  routerLinkActive="active" routerLink="/hook" class="nav-link">Hooks</a> </li> -->
     </ul>
   </nav>
 </header>
+
+<input type="text" placeholder="Enter value" (blur)="handleData($event)">
+
+<!-- <button class="btn btn-primary" (click)="changeFromParent()">Change from parent</button> -->
+<app-hooks [parentData]="data1">
+  <h1 #child>
+    This is child content coming from parent content
+  </h1>
+</app-hooks>
 <router-outlet></router-outlet>
 

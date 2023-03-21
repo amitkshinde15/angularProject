@@ -9,6 +9,10 @@ import { Employee } from './model/employee';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  data1: string ='red';
+  changeFromParent(){
+    this.data1 +=1;
+  }
   test = 'Used property binding using div tag';
   title = 'angularApp';
   name = 'Amit';
@@ -49,6 +53,9 @@ export class AppComponent {
   onParent(val : Employee) {
       console.log('Employee details', val);
     
+  }
+  handleData(value){
+    this.data1 = value.target.value;
   }
 }
 
