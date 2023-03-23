@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { AdduserComponent } from './adduser/adduser.component';
 import { AuthGuard } from './auth.guard';
 import { DemopostComponent } from './demopost/demopost.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
@@ -9,6 +10,7 @@ import { WomenswearComponent } from './fashion/womenswear/womenswear.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
+import { ResolveGuard } from './resolve.guard';
 import { AboutusComponent } from './routing/aboutus/aboutus.component';
 import { ContactusComponent } from './routing/contactus/contactus.component';
 import { HomeComponent } from './routing/home/home.component';
@@ -22,6 +24,7 @@ import { ServerTableComponent } from './server-table/server-table.component';
 import { ServertabledetailsComponent } from './servertabledetails/servertabledetails.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { TodoComponent } from './todo/todo.component';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { WikiComponent } from './wiki/wiki.component';
 
@@ -44,7 +47,9 @@ const routes: Routes = [
   {path: 'postdetails/:id', component: DemopostdetailsComponent},
   {path:'user', component: ServerTableComponent},
   {path: 'userdetails/:id', component: ServertabledetailsComponent},
-  {path: 'userdetails', component: UserdetailsComponent},
+  {path: 'userdetails', component: UserdetailsComponent, resolve: {
+    data: ResolveGuard
+  }},
   {path: 'login', component: LoginformComponent}, //{path: 'login', component: TemplateformComponent},
   {path:'order', component: OrderlistComponent},
   {path:'fashion',
@@ -58,6 +63,7 @@ const routes: Routes = [
   {path: 'hook', component: HooksComponent},
   { path: 'customer', loadChildren:'./customer/customer.module#CustomerModule'},
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  { path: 'adduser', component: AdduserComponent, canDeactivate: [UnsavedchangesGuard]},
   { path: '**', component: PagenotfoundComponent}
 ];
 

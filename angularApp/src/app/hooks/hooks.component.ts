@@ -1,19 +1,31 @@
 import { createViewChild } from '@angular/compiler/src/core';
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DemoService } from '../Services/demo.service';
 
 @Component({
   selector: 'app-hooks',
   templateUrl: './hooks.component.html',
   styleUrls: ['./hooks.component.css']
 })
-export class HooksComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,AfterViewInit,AfterViewChecked{
-
+export class HooksComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, 
+AfterContentChecked,AfterViewInit,AfterViewChecked, OnDestroy
+{
+  subscription: Subscription;
+  counter;
+  num: number = 1;
+  
   @Input() parentData: string;
   @ContentChild("child", {static: false}) contentChild: ElementRef;
   @ViewChild("childhook", {static: false}) viewChild: ElementRef;
 
-  constructor() { 
+  constructor(private demoService : DemoService) { 
     console.log('HooksComponent Construcor called');   
+  }
+  ngOnDestroy(): void {
+    console.log('HooksComponent ngOnDestroy called');
+    clearInterval(this.counter);
+    this.subscription.unsubscribe();
   }
   ngAfterContentChecked(): void {
     console.log('HooksComponent ngAfterContentChecked called', this.contentChild);
@@ -39,6 +51,14 @@ export class HooksComponent implements OnInit, OnChanges, DoCheck, AfterContentI
 
   ngOnInit() {
     console.log('HooksComponent ngOnInit called');
+
+    this.subscription = this.demoService.getUsers().subscribe(res => {
+      console.log('users from hooks component', res);
+     });
+    // this.counter = setInterval(() => {
+    // this.num = this.num + 1;
+    // console.log(this.num);
+    //  }, 1000)
   }
 
 
@@ -57,7 +77,7 @@ export class HooksComponent implements OnInit, OnChanges, DoCheck, AfterContentI
         console.log("-------------------");
         
                
-    }
-    
+    }  
   }
+  
 }

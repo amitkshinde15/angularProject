@@ -79,6 +79,8 @@
       <li class="nav-item"> <a  routerLinkActive="active" routerLink="/todo" class="nav-link">ToDo</a> </li>
       <li class="nav-item"> <a  routerLinkActive="active" routerLink="/wiki" class="nav-link">Wiki</a> </li>
       <!-- <li class="nav-item"> <a  routerLinkActive="active" routerLink="/hook" class="nav-link">Hooks</a> </li> -->
+      <li class="nav-item"> <a  routerLinkActive="active" routerLink="/adduser" class="nav-link">Add User</a> </li>
+      <li class="nav-item"> <a  routerLinkActive="active" routerLink="/userdetails" class="nav-link">User Details</a> </li>
     </ul>
   </nav>
 </header>
@@ -86,10 +88,12 @@
 <input type="text" placeholder="Enter value" (blur)="handleData($event)">
 
 <!-- <button class="btn btn-primary" (click)="changeFromParent()">Change from parent</button> -->
-<app-hooks [parentData]="data1">
+<app-hooks [parentData]="data1" *ngIf="destroyElement">
   <h1 #child>
     This is child content coming from parent content
   </h1>
 </app-hooks>
+<button class="btn btn-danger" (click)="destroy()">On Destroy</button>
+{{myObservable | async}}
 <router-outlet></router-outlet>
 

@@ -82,6 +82,7 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { WikiComponent } from './wiki/wiki.component';
+import { AdduserComponent } from './adduser/adduser.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { WikiComponent } from './wiki/wiki.component';
     TodoComponent,
     LoginformComponent,
     HooksComponent,
-    WikiComponent
+    WikiComponent,
+    AdduserComponent
     
   ],
   imports: [

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 import { Employee } from './model/employee';
+import { RapidapiService } from './Services/rapidapi.service';
 
 
 @Component({
@@ -9,6 +12,8 @@ import { Employee } from './model/employee';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  myObservable : any;
+  destroyElement:boolean = true;
   data1: string ='red';
   changeFromParent(){
     this.data1 +=1;
@@ -35,12 +40,16 @@ export class AppComponent {
     name : 'Codeminde',
     dept : 'Technology'
   }
-  constructor(){
+  constructor(private rapidService: RapidapiService){
     this.getValueFromServer();
     this.getCurrentDate();  
   }
   ngOnInit():void{
+    this.myObservable = of('This is custom observable').pipe(delay(3000));
 
+    // this.rapidService.getFinance().subscribe(res=>{
+    //   console.log('rapid res', res);  
+    // })
   }
   getValueFromServer(){
     this.empCount = 100000;  
@@ -56,6 +65,10 @@ export class AppComponent {
   }
   handleData(value){
     this.data1 = value.target.value;
+  }
+
+  destroy(){
+    this.destroyElement=false;
   }
 }
 
