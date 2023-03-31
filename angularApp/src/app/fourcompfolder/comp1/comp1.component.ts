@@ -29,7 +29,6 @@ export class Comp1Component implements OnInit {
   {
     this.userName = uname.value;
     console.log(uname.value);
-
     this._utilityService.userName.next(uname.value);
   }
 }

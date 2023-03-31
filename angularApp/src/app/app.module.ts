@@ -53,7 +53,7 @@ import { TemplateformAssignmentComponent } from './templateform-assignment/templ
 import { ReactiveformAssignmentComponent } from './reactiveform-assignment/reactiveform-assignment.component';
 import { RegestrationFormComponent } from './hiteshRegestration-form/regestration-form.component';
 import { FormsComponent } from './forms/forms.component';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServerTableComponent } from './server-table/server-table.component';
 import { PipeexampleComponent } from './pipeexample/pipeexample.component';
 import { CustomPipe } from './custom.pipe';
@@ -83,6 +83,8 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { AdduserComponent } from './adduser/adduser.component';
+import { AuthInterceptorService } from './auth-interceptor.service';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -132,7 +134,8 @@ import { AdduserComponent } from './adduser/adduser.component';
     LoginformComponent,
     HooksComponent,
     WikiComponent,
-    AdduserComponent
+    AdduserComponent,
+    RxjsComponent
     
   ],
   imports: [
@@ -172,7 +175,7 @@ import { AdduserComponent } from './adduser/adduser.component';
     HttpClientJsonpModule
    
   ],
-  providers: [], //Services
+  providers: [], //Services // { provide: HTTP_INTERCEPTORS, useClass:AuthInterceptorService, multi:true  }
   bootstrap: [AppComponent]
 })
 export class AppModule {

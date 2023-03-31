@@ -20,6 +20,7 @@ import { LaptopComponent } from './routing/product/laptop/laptop.component';
 import { MobileComponent } from './routing/product/mobile/mobile.component';
 import { ProductComponent } from './routing/product/product.component';
 import { WatchComponent } from './routing/product/watch/watch.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 import { ServerTableComponent } from './server-table/server-table.component';
 import { ServertabledetailsComponent } from './servertabledetails/servertabledetails.component';
 import { TemplateformComponent } from './templateform/templateform.component';
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'customer', loadChildren:'./customer/customer.module#CustomerModule'},
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
   { path: 'adduser', component: AdduserComponent, canDeactivate: [UnsavedchangesGuard]},
+  {path: 'rxjs', component: RxjsComponent},
   { path: '**', component: PagenotfoundComponent}
 ];
 

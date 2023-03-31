@@ -69,6 +69,7 @@ export class AppComponent {
 
   destroy(){
     this.destroyElement=false;
+   
   }
 }
 

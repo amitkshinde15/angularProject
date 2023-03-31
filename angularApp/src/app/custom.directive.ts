@@ -11,5 +11,4 @@ export class CustomDirective {
     render.setStyle(el.nativeElement, 'backgroundColor', 'red')
    
   }
-
 }
