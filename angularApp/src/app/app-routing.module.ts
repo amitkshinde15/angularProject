@@ -10,6 +10,7 @@ import { WomenswearComponent } from './fashion/womenswear/womenswear.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { OrderlistComponent } from './orders/orderlist/orderlist.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { ResolveGuard } from './resolve.guard';
 import { AboutusComponent } from './routing/aboutus/aboutus.component';
 import { ContactusComponent } from './routing/contactus/contactus.component';
@@ -51,7 +52,9 @@ const routes: Routes = [
   {path: 'userdetails', component: UserdetailsComponent, resolve: {
     data: ResolveGuard
   }},
-  {path: 'login', component: LoginformComponent}, //{path: 'login', component: TemplateformComponent},
+ // {path: 'login', component: LoginformComponent}, 
+  //{path: 'login', component: TemplateformComponent},
+  {path: 'login', component: ReactiveformComponent},
   {path:'order', component: OrderlistComponent},
   {path:'fashion',
   children:[
